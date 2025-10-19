@@ -1,22 +1,21 @@
-#ifndef MQTT_FUNCTIONS_H
-#define MQTT_FUNCTIONS_H
 
-#include <PubSubClient.h>
 
-// ---------------------------------------------------------------------------
-// Credenciales WiFi
-// ---------------------------------------------------------------------------
-const char* WIFI_SSID = "red";
-const char* WIFI_PASSWORD = "12345678";
+#ifndef CONFIG_H
+#define CONFIG_H
 
-// ---------------------------------------------------------------------------
-// --- MQTT ---
+// -----------------------------
+// 🔹 WiFi
+// -----------------------------
+#define WIFI_SSID "red"
+#define WIFI_PASSWORD "12345678"
 
-// ---------------------------------------------------------------------------
-// Declaraciones de funciones relacionadas con MQTT
-// ---------------------------------------------------------------------------
-void setupMQTT(PubSubClient& client);     // Configura el cliente MQTT
-void reconnectMQTT(PubSubClient& client); // Reintenta conexión si se pierde la comunicación con el broker
-void publishStatus(PubSubClient& client); // Envía un mensaje JSON con el estado de los pines
+// -----------------------------
+// 🔹 Broker MQTT (HiveMQ Cloud)
+// -----------------------------
+#define MQTT_SERVER "28e8473be1bd4ea2a6ac7c8e4979b345.s1.eu.hivemq.cloud"
+#define MQTT_PORT 8883           // Puerto TLS
+#define MQTT_USER "Hivestmk"
+#define MQTT_PASS "HiveAlazcano2025"
+#define MQTT_TOPIC "esp32/status"
 
 #endif
